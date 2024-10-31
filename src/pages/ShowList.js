@@ -44,12 +44,17 @@ export default function ShowList({ showData }) {
   }, [handleKeyDown]);
 
   return (
-    <Carousel
-      slides={slides}
-      goToSlide={goToSlide}
-      offsetRadius={offsetRadius}
-      showNavigation={showNavigation}
-      animationConfig={config.slow}
-    />
+    <>
+      <div className="App-header">Show Tickets</div>
+      <div className="App-body">
+        <Carousel
+          slides={slides}
+          goToSlide={goToSlide}
+          offsetRadius={offsetRadius}
+          showNavigation={showNavigation}
+          animationConfig={config.slow}
+        />
+      </div>
+    </>
   );
 }
