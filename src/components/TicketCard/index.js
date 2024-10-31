@@ -7,8 +7,15 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import QuantityInput from "./QuantityInput";
+import { UserContext, UserDispatchContext } from "../../Context";
 
-export default function TicketCard({ logo, title, explanation }) {
+export default function TicketCard({ logo, title, explanation, price, index }) {
+  const setPaymentDetails = React.useContext(UserDispatchContext);
+  const [count, setCount] = React.useState(0);
+
+  const onClickTicket = React.useCallback(() => {
+    setPaymentDetails({ count, ticketId: index, price, page: 1 });
+  }, [count]);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia component="img" alt="green iguana" height="140" image={logo} />
@@ -21,8 +28,13 @@ export default function TicketCard({ logo, title, explanation }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <QuantityInput />
-        <Button size="small">Buy</Button>
+        <QuantityInput count={count} setCount={setCount} />
+        <Typography variant="body2" color="text.secondary">
+          {`** ${price}$ **`}
+        </Typography>
+        <Button size="small" onClick={onClickTicket}>
+          Buy
+        </Button>
       </CardActions>
     </Card>
   );

@@ -13,6 +13,8 @@ export default function ShowList({ showData }) {
           title={show.title}
           explanation={show.explanation}
           logo={show.logo}
+          price={show.price}
+          index={index}
         />
       ),
       onClick: () => setGoToSlide(index),

@@ -1,12 +1,15 @@
 import "./App.css";
+import React from "react";
 
-import ShowList from "./pages/ShowList";
-import showData from "./data";
+import { UserProvider } from "./Context";
+import AppCover from "./pages/AppCover";
 
 function App() {
   return (
     <div className="App">
-      <ShowList showData={showData} />
+      <UserProvider>
+        <AppCover />
+      </UserProvider>
     </div>
   );
 }
