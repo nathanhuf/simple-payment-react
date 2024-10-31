@@ -52,3 +52,22 @@
     transform: rotate(360deg);
   }
 }
+
+.App-payment {
+  display: flex;
+  flex-direction: row;
+}
+
+.App-payment-form-part {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group .form-control {
+  padding: 5px;
+  font-size: 15px;
+}

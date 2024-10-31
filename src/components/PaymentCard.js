@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { UserContext, UserDispatchContext } from "../Context";
+import CreditCard from "./CreditCard";
 
 export default function PaymentCard() {
   const paymentDetails = useContext(UserContext);
@@ -25,6 +26,7 @@ export default function PaymentCard() {
         <Typography gutterBottom variant="h5" component="div">
           Use Credit / Debit Card
         </Typography>
+        <CreditCard />
       </CardContent>
       <CardContent>
         <Button>+ Add Card</Button>
