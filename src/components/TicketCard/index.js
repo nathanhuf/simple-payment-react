@@ -14,7 +14,8 @@ export default function TicketCard({ logo, title, explanation, price, index }) {
   const [count, setCount] = React.useState(0);
 
   const onClickTicket = React.useCallback(() => {
-    setPaymentDetails({ count, ticketId: index, price, page: 1 });
+    if (count > 0)
+      setPaymentDetails({ count, ticketId: index, price, page: 1 });
   }, [count]);
   return (
     <Card sx={{ maxWidth: 345 }}>
