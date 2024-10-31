@@ -21,9 +21,9 @@ export default function TicketCard({ logo, title, explanation, price, index }) {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt="example"
         height="140"
-        image={"https://www.unsplash.com/flower"}
+        image={"./Meta.png"}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
